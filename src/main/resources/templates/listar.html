@@ -1,0 +1,30 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Listado de Personas </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Acciones</th>
+            </tr>
+            <tr th:each = "persona : ${Listapersona}">
+                <td th:text="${persona.id_persona}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.apellido}"></td>
+                <td> 
+                    <a th:href="@{/editar/{id_persona}(id_persona=${persona.id_persona})}"> Editar </a>
+                    <a th:href="@{/eliminar/{id_persona}(id_persona=${persona.id_persona})}"> Eliminar </a>
+                </td>
+            </tr>
+            
+        </table>
+        <a href="/nueva"> Nueva Persona</a>
+    </body>
+</html>
+

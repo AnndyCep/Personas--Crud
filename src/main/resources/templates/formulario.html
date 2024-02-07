@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Formulario de persona </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Crear nueva Persona</h1>
+        
+        <form th:object="${persona}" th:action="${accion}" method="post">
+            <!-- hidden es para que sea oculto  -->
+            <input type="hidden" th_field="*{id_persona}">
+            <label> Nombre : <input type="text" th:field="*{nombre}"></label><br>
+            <label> Apellido <input type="text" th:field="*{apellido}"></label><br>
+            <button type="submit"> Guardar </button>
+        </form>
+            
+        <a href="/"> Volver a al listado </a>
+    </body>
+</html>
